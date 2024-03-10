@@ -12,6 +12,7 @@ function M.load()
   local groups = {
     "editor",
     "lazy",
+    "illuminate",
   }
   for _, group in ipairs(groups) do
     highlights = vim.tbl_deep_extend("force", highlights, require("lienchi.groups." .. group))
