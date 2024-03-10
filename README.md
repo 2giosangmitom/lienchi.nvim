@@ -1,2 +1,4 @@
 # lienchi.nvim
-A beautiful girl
+
+> [!NOTE]
+> This plugin is under development
