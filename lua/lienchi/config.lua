@@ -8,6 +8,10 @@ local defaults = {
     functions = {},
     variables = {},
   },
+  integrations = {
+    neo_tree = true,
+    which_key = true,
+  },
 }
 
 M.options = {}
