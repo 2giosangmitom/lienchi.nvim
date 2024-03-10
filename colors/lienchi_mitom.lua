@@ -1,1 +1,0 @@
-require("lienchi").load("mitom")

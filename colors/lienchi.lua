@@ -1,1 +1,1 @@
-require("lienchi").load(nil)
+require("lienchi").load()
