@@ -1,5 +1,4 @@
 local colors = require("lienchi.colors").setup({ transform = true })
-local config = require("lienchi.config").options
 
 local lienchi = {}
 
@@ -39,11 +38,5 @@ lienchi.inactive = {
   b = { bg = colors.bg_statusline, fg = colors.fg_gutter, gui = "bold" },
   c = { bg = colors.bg_statusline, fg = colors.fg_gutter },
 }
-
-if config.lualine_bold then
-  for _, mode in pairs(lienchi) do
-    mode.a.gui = "bold"
-  end
-end
 
 return lienchi
