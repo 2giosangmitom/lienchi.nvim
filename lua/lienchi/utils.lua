@@ -27,32 +27,4 @@ function M.lighten(hex, amount, fg) return M.blend(hex, fg or M.fg, amount) end
 
 function M.terminal(colors) end
 
-function M.invert_colors(colors)
-  if type(colors) == "string" then return M.invert_color(colors) end
-  for key, value in pairs(colors) do
-    colors[key] = M.invert_colors(value)
-  end
-  return colors
-end
-
-function M.invert_highlights(hls)
-  for _, hl in pairs(hls) do
-    if hl.fg then hl.fg = M.invert_color(hl.fg) end
-    if hl.bg then hl.bg = M.invert_color(hl.bg) end
-    if hl.sp then hl.sp = M.invert_color(hl.sp) end
-  end
-end
-
-function M.load(theme)
-  if vim.g.colors_name then vim.cmd("hi clear") end
-  vim.o.termguicolors = true
-  vim.g.colors_name = "lienchi"
-
-  for group, hl in pairs(theme.highlights) do
-    vim.api.nvim_set_hl(0, group, hl)
-  end
-
-  if theme.config.terminal_colors then M.terminal(theme.colors) end
-end
-
 return M
