@@ -21,9 +21,9 @@ function M.blend(foreground, background, alpha)
   return string.format("#%02x%02x%02x", blendChannel(1), blendChannel(2), blendChannel(3))
 end
 
-function M.darken(hex, amount, bg) return M.blend(hex, bg or M.bg, amount) end
+function M.darken(hex, amount, bg) return M.blend(hex, bg, amount) end
 
-function M.lighten(hex, amount, fg) return M.blend(hex, fg or M.fg, amount) end
+function M.lighten(hex, amount, fg) return M.blend(hex, fg, amount) end
 
 function M.terminal(colors) end
 
