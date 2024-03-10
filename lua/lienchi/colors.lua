@@ -8,8 +8,9 @@ M.lienchi = {
   green = "#779556",
   black = "#0B0E14",
   fg_gutter = "#2d2c3c",
+  magenta = "#b263b0",
+  bg_highlight = "#171823",
+  blue = "#7aa2f7",
 }
-
-function M.setup(opts) end
 
 return M

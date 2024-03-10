@@ -15,11 +15,11 @@ function M.load()
     "illuminate",
   }
   for _, group in ipairs(groups) do
-    highlights = vim.tbl_deep_extend("force", highlights, require("lienchi.groups." .. group))
+    highlights = vim.tbl_extend("force", highlights, require("lienchi.groups." .. group))
   end
 
-  for group, group_settings in pairs(highlights) do
-    vim.api.nvim_set_hl(0, group, group_settings)
+  for group, hl in pairs(highlights) do
+    require("lienchi.utils").highlight(group, hl)
   end
 end
 
