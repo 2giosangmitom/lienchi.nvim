@@ -1,7 +1,5 @@
 local M = {}
 
-local config = require("lienchi.config")
-
 local function _load(theme)
   if vim.g.colors_name then vim.cmd("hi clear") end
   vim.o.termguicolors = true
@@ -11,11 +9,11 @@ local function _load(theme)
     vim.api.nvim_set_hl(0, group, hl)
   end
 
-  if theme.config.terminal_colors then M.terminal(theme.colors) end
+  if theme.config.term_colors then require("lienchi.utils").terminal(theme.colors) end
 end
 
 function M.load() _load(require("lienchi.theme").setup()) end
 
-M.setup = config.setup
+M.setup = require("lienchi.config").setup
 
 return M
