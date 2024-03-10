@@ -1,1 +1,1 @@
-require("lienchi").load()
+require("lienchi")._load()
